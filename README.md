@@ -51,18 +51,21 @@ portfolio/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 16.x or higher
 - npm or yarn package manager
 
 ### Installation
 
 1. **Clone/Download the project**
+
 ```bash
 # Navigate to project directory
 cd ashish-portfolio
 ```
 
 2. **Install dependencies**
+
 ```bash
 npm install
 # or
@@ -75,6 +78,7 @@ yarn install
    - All changes are reflected automatically
 
 4. **Run development server**
+
 ```bash
 npm run dev
 # or
@@ -97,12 +101,18 @@ All content is stored in `src/data/portfolio.json`. Simply update:
     "name": "Your Name",
     "title": "Your Title",
     "tagline": "Your tagline",
-    "email": "your@email.com",
+    "email": "your@email.com"
     // ... more fields
   },
-  "experience": [ /* Array of job experiences */ ],
-  "projects": [ /* Array of projects */ ],
-  "skills": [ /* Array of skill categories */ ]
+  "experience": [
+    /* Array of job experiences */
+  ],
+  "projects": [
+    /* Array of projects */
+  ],
+  "skills": [
+    /* Array of skill categories */
+  ]
 }
 ```
 
@@ -166,6 +176,7 @@ Edit the `social` array in `portfolio.json`:
 ### Add/Remove Sections
 
 In `PortfolioApp.tsx`, component sections are rendered in order:
+
 1. Navigation
 2. Hero Section
 3. Experience Section
@@ -177,22 +188,24 @@ In `PortfolioApp.tsx`, component sections are rendered in order:
 To hide a section, comment out its component:
 
 ```tsx
-<HeroSection isDark={isDark} />
-{/* <ExperienceSection isDark={isDark} /> */}  // Hidden
-<ProjectsSection isDark={isDark} />
+<HeroSection isDark={isDark} />;
+{
+  /* <ExperienceSection isDark={isDark} /> */
+} // Hidden
+<ProjectsSection isDark={isDark} />;
 ```
 
 ## 🎨 Design System
 
 ### Color Palette
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Cyan | `#06b6d4` | Primary accent |
-| Purple | `#8b5cf6` | Secondary accent |
-| Amber | `#fbbf24` | Highlights |
-| Dark Blue | `#0f172a` | Dark background |
-| Light Slate | `#f8fafc` | Light text |
+| Color       | Hex       | Usage            |
+| ----------- | --------- | ---------------- |
+| Cyan        | `#06b6d4` | Primary accent   |
+| Purple      | `#8b5cf6` | Secondary accent |
+| Amber       | `#fbbf24` | Highlights       |
+| Dark Blue   | `#0f172a` | Dark background  |
+| Light Slate | `#f8fafc` | Light text       |
 
 ### Typography
 
@@ -226,6 +239,7 @@ Uses Tailwind's default spacing scale (4px units). Consistent padding and margin
 ### Deploy to Other Platforms
 
 Build the project:
+
 ```bash
 npm run build
 npm start
@@ -242,20 +256,24 @@ npm start
 ## 🐛 Troubleshooting
 
 ### Animations not working?
+
 - Check browser supports CSS animations
 - Verify Framer Motion is installed: `npm install framer-motion`
 - Clear browser cache and rebuild
 
 ### Dark mode not persisting?
+
 - Check if localStorage is enabled in browser
 - Verify theme state management in `PortfolioApp.tsx`
 
 ### Images not loading?
+
 - Verify image URLs are correct and accessible
 - Check image domain settings in `next.config.js`
 - Use relative paths for local images
 
 ### Build errors?
+
 ```bash
 # Clean and rebuild
 rm -rf .next node_modules
@@ -284,6 +302,7 @@ This portfolio template is free to use for personal projects.
 ## 🙋 Support
 
 For issues or questions:
+
 1. Check the troubleshooting section above
 2. Review Next.js documentation: https://nextjs.org/docs
 3. Check Framer Motion docs: https://www.framer.com/motion/
@@ -291,10 +310,11 @@ For issues or questions:
 ## 📞 Contact
 
 **Ashish Madan**
+
 - 📧 Email: ashishmadan12@gmail.com
 - 💼 LinkedIn: linkedin.com/in/ashish2000
 - 🐙 GitHub: github.com/am282000
-- 📱 Phone: +91-7015875465
+- 📱 Phone: 7015875465
 
 ---
 
