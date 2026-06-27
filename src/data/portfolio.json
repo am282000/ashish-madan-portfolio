@@ -1,0 +1,223 @@
+{
+  "personal": {
+    "name": "Ashish Madan",
+    "title": "Senior Software Engineer",
+    "tagline": "Building scalable frontend systems with modern web technologies",
+    "location": "Noida, India",
+    "email": "ashishmadan12@gmail.com",
+    "phone": "+91-7015875465",
+    "bio": "Senior Software Engineer with 3.5+ years of experience building scalable frontend systems using React, Vue.js, and microfrontend architectures. I'm passionate about creating beautiful, performant web applications that solve real-world problems.",
+    "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    "resumeDownloadName": "Ashish_Madan_Resume.pdf"
+  },
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/am282000",
+      "icon": "github"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/ashish2000",
+      "icon": "linkedin"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:ashishmadan12@gmail.com",
+      "icon": "mail"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "title": "Senior Software Engineer",
+      "company": "Clarivate",
+      "duration": "Apr 2025 - Present",
+      "description": "Leading architecture of multi-tenant SaaS platforms with RBAC and real-time systems",
+      "highlights": [
+        "Led architecture of a multi-tenant SaaS platform with RBAC, supporting multiple enterprise clients",
+        "Designed a dynamic onboarding system improving completion rates and reducing drop-offs",
+        "Built a headless component library reducing duplicate UI effort",
+        "Collaborated cross-functionally with backend and product teams"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Senior Software Engineer",
+      "company": "Veersa Technologies",
+      "duration": "Aug 2022 - Mar 2025",
+      "description": "Architected large-scale migrations and performance optimizations",
+      "highlights": [
+        "Migrated large-scale Vue 2 application to React, improving performance by 30%",
+        "Developed a Progressive Web App (PWA) with offline support and push notifications",
+        "Designed a timezone-aware scheduling system for distributed users",
+        "Improved performance using code splitting and lazy loading"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Software Engineer Intern",
+      "company": "Veersa Technologies",
+      "duration": "Aug 2021 - Aug 2022",
+      "description": "Started career building micro-frontend architectures and secure systems",
+      "highlights": [
+        "Implemented micro-frontend architecture using Module Federation",
+        "Built secure authentication flows and rate limiting mechanisms",
+        "Enabled independent deployments across teams",
+        "Reduced release cycles by improving deployment infrastructure"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Service Request Platform (SaaS)",
+      "description": "Enterprise-grade SaaS platform with real-time tracking and document integration",
+      "longDescription": "A comprehensive Service Request Platform built with micro-frontend architecture, enabling seamless document processing and real-time user tracking. The platform serves enterprise clients with multi-tenant capabilities and sophisticated workflow management.",
+      "image": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=600&h=400&fit=crop",
+      "tags": [
+        "Micro-frontends",
+        "WebSockets",
+        "Real-time",
+        "React",
+        "Node.js"
+      ],
+      "highlights": [
+        "Designed micro-frontend architecture improving deployment independence by 35%",
+        "Built real-time tracking using WebSockets",
+        "Integrated DocuSign APIs reducing manual processing by 40%",
+        "Optimized performance improving load time by 30%"
+      ],
+      "metrics": {
+        "deploymentReduction": "35%",
+        "documentProcessing": "40%",
+        "performanceGain": "30%"
+      }
+    },
+    {
+      "id": 2,
+      "title": "KIPU Healthcare Platform",
+      "description": "Real-time healthcare management system with concurrent user support",
+      "longDescription": "A sophisticated healthcare management platform featuring real-time Kanban boards, concurrent user updates, and intelligent form validation. Built for high-performance environments serving healthcare professionals.",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+      "tags": ["Socket.io", "Real-time", "React", "MongoDB", "Healthcare"],
+      "highlights": [
+        "Developed real-time Kanban system using Socket.io for concurrent updates",
+        "Reduced UI latency by 40% via optimized state management",
+        "Reduced form errors by 25% using schema-based validation",
+        "Implemented memoization strategies for performance"
+      ],
+      "metrics": {
+        "latencyReduction": "40%",
+        "errorReduction": "25%"
+      }
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        { "name": "React", "proficiency": 95, "icon": "⚛️" },
+        { "name": "Next.js", "proficiency": 90, "icon": "▲" },
+        { "name": "Vue.js", "proficiency": 88, "icon": "💚" },
+        { "name": "Angular", "proficiency": 85, "icon": "🔴" },
+        { "name": "TypeScript/ Javascript", "proficiency": 92, "icon": "🔷" },
+        { "name": "Redux/ Pinia/ Zustand", "proficiency": 90, "icon": "📦" },
+        { "name": "Vite/Webpack", "proficiency": 86, "icon": "⚡" },
+        { "name": "Performance Optimization", "proficiency": 93, "icon": "🚀" }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        { "name": "Node.js", "proficiency": 88, "icon": "🟢" },
+        { "name": "Express.js", "proficiency": 85, "icon": "⚙️" },
+        { "name": "MongoDB", "proficiency": 85, "icon": "🍃" },
+        { "name": "REST API Design", "proficiency": 92, "icon": "🔗" },
+        {
+          "name": "Authentication (OAuth2/JWT)",
+          "proficiency": 89,
+          "icon": "🔐"
+        }
+      ]
+    },
+    {
+      "category": "DevOps & Infrastructure",
+      "items": [
+        { "name": "Docker", "proficiency": 82, "icon": "🐳" },
+        { "name": "AWS", "proficiency": 85, "icon": "☁️" },
+        {
+          "name": "CI/CD Pipelines (GitHub Actions/Jenkins)",
+          "proficiency": 87,
+          "icon": "🔄"
+        },
+        { "name": "Git/Git Workflows", "proficiency": 91, "icon": "🌳" }
+      ]
+    },
+    {
+      "category": "Testing & Quality",
+      "items": [
+        { "name": "Jest", "proficiency": 90, "icon": "🧪" },
+        { "name": "Unit Testing", "proficiency": 92, "icon": "✓" },
+        { "name": "Code Coverage & Quality", "proficiency": 88, "icon": "📈" }
+      ]
+    },
+    {
+      "category": "Architecture & Design",
+      "items": [
+        { "name": "Micro-frontends", "proficiency": 92, "icon": "🔗" },
+        { "name": "Design Patterns", "proficiency": 90, "icon": "🏛️" },
+        {
+          "name": "Scalability & Performance",
+          "proficiency": 91,
+          "icon": "📈"
+        },
+        { "name": "SOLID Principles", "proficiency": 88, "icon": "🔷" },
+        { "name": "Clean Code Practices", "proficiency": 89, "icon": "✨" }
+      ]
+    },
+    {
+      "category": "Advanced & Specialized",
+      "items": [
+        {
+          "name": "PWA & Offline-First Architecture",
+          "proficiency": 88,
+          "icon": "📱"
+        },
+        { "name": "SEO Optimization", "proficiency": 85, "icon": "🔍" },
+        {
+          "name": "Accessibility (a11y/WCAG)",
+          "proficiency": 84,
+          "icon": "♿"
+        },
+        {
+          "name": "Storybook & Component Libraries",
+          "proficiency": 85,
+          "icon": "📚"
+        }
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Rapid Adaptor",
+      "company": "Clarivate",
+      "year": 2025,
+      "description": "Recognized for managing multiple concurrent projects with excellence"
+    },
+    {
+      "title": "High Flyer Award",
+      "company": "Veersa Technologies",
+      "year": 2024,
+      "description": "Awarded for outstanding performance and contributions to the team"
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech in Computer Science",
+      "institution": "The Technological Institute of Textile and Sciences",
+      "year": "2018 - 2022",
+      "cgpa": "8.5"
+    }
+  ]
+}
