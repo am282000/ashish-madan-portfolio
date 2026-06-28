@@ -296,126 +296,131 @@ const HeroSection = ({ isDark }: SectionProps) => {
         style={{ bottom: "10%", right: "10%" }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.h1
-            className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-amber-400 bg-clip-text text-transparent"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            {portfolio.personal.name}
-          </motion.h1>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row items-center min-h-[80vh]">
+          {/* Left Side - 60% */}
+          <div className="w-full lg:w-3/5 flex justify-center">
+            <div className="max-w-2xl text-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+              >
+                <motion.h1
+                  className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-amber-400 bg-clip-text text-transparent"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                >
+                  {portfolio.personal.name}
+                </motion.h1>
 
-          <motion.p
-            className={`text-2xl md:text-3xl mb-4 font-light ${
-              isDark ? "text-slate-300" : "text-gray-700"
-            }`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {portfolio.personal.title}
-          </motion.p>
+                <motion.p
+                  className={`text-2xl md:text-3xl mb-4 font-light ${
+                    isDark ? "text-slate-300" : "text-gray-700"
+                  }`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                  {portfolio.personal.title}
+                </motion.p>
 
-          <motion.p
-            className={`text-lg mb-8 max-w-2xl mx-auto ${
-              isDark ? "text-slate-400" : "text-gray-600"
-            }`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            {portfolio.personal.tagline}
-          </motion.p>
-        </motion.div>
+                <motion.p
+                  className={`text-lg mb-8 max-w-2xl ${
+                    isDark ? "text-slate-400" : "text-gray-600"
+                  }`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                  {portfolio.personal.tagline}
+                </motion.p>
+              </motion.div>
+              {/* CTA Buttons */}
+              <motion.div
+                className="flex flex-wrap gap-4 justify-center mt-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <motion.a
+                  href="#projects"
+                  className={`px-8 py-3 rounded-lg font-semibold transition-all ${
+                    isDark
+                      ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:shadow-lg hover:shadow-cyan-500/50"
+                      : "bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:shadow-lg hover:shadow-cyan-500/50"
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View Projects
+                </motion.a>
 
-        {/* CTA Buttons */}
-        <motion.div
-          className="flex flex-wrap gap-4 justify-center mt-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <motion.a
-            href="#projects"
-            className={`px-8 py-3 rounded-lg font-semibold transition-all ${
-              isDark
-                ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:shadow-lg hover:shadow-cyan-500/50"
-                : "bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:shadow-lg hover:shadow-cyan-500/50"
-            }`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View Projects
-          </motion.a>
+                <motion.a
+                  href="#contact"
+                  className={`px-8 py-3 rounded-lg font-semibold border-2 transition-all ${
+                    isDark
+                      ? "border-cyan-500 text-cyan-400 hover:bg-cyan-500/10"
+                      : "border-cyan-500 text-cyan-600 hover:bg-cyan-500/10"
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Contact Me
+                </motion.a>
 
-          <motion.a
-            href="#contact"
-            className={`px-8 py-3 rounded-lg font-semibold border-2 transition-all ${
-              isDark
-                ? "border-cyan-500 text-cyan-400 hover:bg-cyan-500/10"
-                : "border-cyan-500 text-cyan-600 hover:bg-cyan-500/10"
-            }`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Contact Me
-          </motion.a>
+                <motion.a
+                  href="/resume.pdf"
+                  download={portfolio.personal.resumeDownloadName}
+                  className={`px-8 py-3 rounded-lg font-semibold border-2 transition-all flex items-center gap-2 ${
+                    isDark
+                      ? "border-amber-500 text-amber-400 hover:bg-amber-500/10"
+                      : "border-amber-500 text-amber-600 hover:bg-amber-500/10"
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Download size={18} />
+                  Download Resume
+                </motion.a>
+              </motion.div>
+              {/* Social Links */}
+              <motion.div
+                className="flex gap-6 justify-center mt-12"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                {portfolio.social.map((social: SocialLink) => (
+                  <motion.a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`p-3 rounded-lg transition-colors ${
+                      isDark
+                        ? "hover:bg-slate-800 text-slate-400"
+                        : "hover:bg-gray-200 text-gray-600"
+                    }`}
+                    whileHover={{ scale: 1.2, color: "#06b6d4" }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    {social.icon === "github" && <Github size={24} />}
+                    {social.icon === "linkedin" && <Linkedin size={24} />}
+                    {social.icon === "mail" && <Mail size={24} />}
+                  </motion.a>
+                ))}
+              </motion.div>
+            </div>
+          </div>
 
-          <motion.a
-            href="/resume.pdf"
-            download={portfolio.personal.resumeDownloadName}
-            className={`px-8 py-3 rounded-lg font-semibold border-2 transition-all flex items-center gap-2 ${
-              isDark
-                ? "border-amber-500 text-amber-400 hover:bg-amber-500/10"
-                : "border-amber-500 text-amber-600 hover:bg-amber-500/10"
-            }`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Download size={18} />
-            Download Resume
-          </motion.a>
-        </motion.div>
-
-        {/* Social Links */}
-        <motion.div
-          className="flex gap-6 justify-center mt-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          {portfolio.social.map((social: SocialLink) => (
-            <motion.a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`p-3 rounded-lg transition-colors ${
-                isDark
-                  ? "hover:bg-slate-800 text-slate-400"
-                  : "hover:bg-gray-200 text-gray-600"
-              }`}
-              whileHover={{ scale: 1.2, color: "#06b6d4" }}
-              whileTap={{ scale: 0.9 }}
-            >
-              {social.icon === "github" && <Github size={24} />}
-              {social.icon === "linkedin" && <Linkedin size={24} />}
-              {social.icon === "mail" && <Mail size={24} />}
-            </motion.a>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Animated Character */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-        <motion.div>
-          <AnimatedCharacter />
-        </motion.div>
+          {/* Right Side - 40% */}
+          <div className="w-full lg:w-2/5 flex justify-center items-center">
+            <motion.div className="h-[450px] flex items-center justify-center">
+              <AnimatedCharacter isDark={isDark} />
+            </motion.div>
+          </div>
+        </div>
       </div>
 
       {/* Scroll Indicator */}
