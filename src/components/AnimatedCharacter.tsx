@@ -6,9 +6,7 @@ interface AnimatedCharacterProps {
   isDark?: boolean;
 }
 
-const AnimatedCharacter: React.FC<AnimatedCharacterProps> = ({
-  isDark = true,
-}) => {
+const AnimatedCharacter: React.FC<AnimatedCharacterProps> = () => {
   // Blinking animation variant
   const blinkVariant = {
     open: { scaleY: 1, transition: { duration: 0.1 } },
