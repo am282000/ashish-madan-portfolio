@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import portfolioData from "@/data/portfolio.json";
 import AnimatedCharacter from "./AnimatedCharacter";
+import CursorFollower from "./CursorFollower";
 import Image from "next/image";
 
 type ThemeProps = {
@@ -50,6 +51,7 @@ type ProjectItem = {
   tags: string[];
   highlights?: string[];
   metrics?: Record<string, string | undefined>;
+  liveUrl: string;
 };
 
 type SkillItem = {
@@ -70,6 +72,24 @@ type AwardItem = {
   description: string;
 };
 
+type AboutHighlight = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
+type AboutStat = {
+  value: string;
+  label: string;
+};
+
+type AboutData = {
+  intro: string;
+  description: string;
+  highlights: AboutHighlight[];
+  stats: AboutStat[];
+};
+
 type PortfolioData = {
   personal: {
     name: string;
@@ -87,6 +107,7 @@ type PortfolioData = {
   projects: ProjectItem[];
   skills: SkillGroup[];
   awards: AwardItem[];
+  about: AboutData;
 };
 
 const portfolio = portfolioData as PortfolioData;
@@ -187,52 +208,6 @@ const Navigation = ({ isDark, setIsDark }: ThemeProps) => {
         </AnimatePresence>
       </div>
     </motion.nav>
-  );
-};
-
-// ==================== CURSOR FOLLOWER ====================
-const CursorFollower = ({ isDark }: SectionProps) => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      setIsVisible(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsVisible(false);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
-
-  return (
-    <>
-      <motion.div
-        className={`fixed w-8 h-8 rounded-full pointer-events-none border-2 ${
-          isDark ? "border-cyan-500" : "border-cyan-400"
-        }`}
-        animate={{ x: position.x - 16, y: position.y - 16 }}
-        transition={{ type: "spring", stiffness: 500, damping: 28 }}
-        style={{ opacity: isVisible ? 1 : 0 }}
-      />
-      <motion.div
-        className={`fixed w-2 h-2 rounded-full pointer-events-none ${
-          isDark ? "bg-purple-500" : "bg-purple-400"
-        }`}
-        animate={{ x: position.x - 4, y: position.y - 4 }}
-        transition={{ type: "spring", stiffness: 800, damping: 35 }}
-        style={{ opacity: isVisible ? 0.5 : 0 }}
-      />
-    </>
   );
 };
 
@@ -488,6 +463,131 @@ const ScrollReveal = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
+// ==================== ABOUT SECTION ====================
+const AboutHighlightCard = ({
+  highlight,
+  isDark,
+}: {
+  highlight: AboutHighlight;
+  isDark: boolean;
+}) => {
+  return (
+    <motion.div
+      className={`h-full p-6 rounded-xl border transition-all flex flex-col ${
+        isDark
+          ? "border-slate-700 bg-slate-800/50 hover:border-cyan-500 hover:bg-slate-800"
+          : "border-gray-200 bg-white hover:border-cyan-500 hover:bg-gray-50"
+      }`}
+      whileHover={{ y: -5 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="text-3xl mb-3">{highlight.icon}</div>
+      <h4
+        className={`text-lg font-bold mb-2 ${
+          isDark ? "text-cyan-400" : "text-cyan-600"
+        }`}
+      >
+        {highlight.title}
+      </h4>
+      <p className={`${isDark ? "text-slate-400" : "text-gray-600"}`}>
+        {highlight.description}
+      </p>
+    </motion.div>
+  );
+};
+
+const AboutSection = ({ isDark }: SectionProps) => {
+  return (
+    <section
+      id="about"
+      className={`py-20 px-4 sm:px-6 lg:px-8 ${
+        isDark ? "bg-slate-800" : "bg-gray-50"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto">
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <p
+              className={`text-sm font-semibold uppercase tracking-widest mb-3 ${
+                isDark ? "text-cyan-400" : "text-cyan-600"
+              }`}
+            >
+              {portfolio.about.intro}
+            </p>
+            <h2
+              className={`text-4xl md:text-5xl font-bold mb-6 ${
+                isDark ? "text-white" : "text-gray-900"
+              }`}
+            >
+              About Me
+            </h2>
+            <p
+              className={`text-lg max-w-3xl mx-auto ${
+                isDark ? "text-slate-400" : "text-gray-600"
+              }`}
+            >
+              {portfolio.about.description}
+            </p>
+          </div>
+
+          <div className="mb-12"></div>
+
+          {/* Highlights - single horizontal row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            {portfolio.about.highlights.map(
+              (highlight: AboutHighlight, index: number) => (
+                <motion.div
+                  key={highlight.title}
+                  className="h-full"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <AboutHighlightCard highlight={highlight} isDark={isDark} />
+                </motion.div>
+              ),
+            )}
+          </div>
+
+          {/* Stats */}
+          <div
+            className={`grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-xl border ${
+              isDark
+                ? "border-slate-700 bg-slate-800/50"
+                : "border-gray-200 bg-white"
+            }`}
+          >
+            {portfolio.about.stats.map((stat: AboutStat, index: number) => (
+              <motion.div
+                key={stat.label}
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div
+                  className={`text-3xl md:text-4xl font-bold mb-1 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent`}
+                >
+                  {stat.value}
+                </div>
+                <div
+                  className={`text-sm font-medium ${
+                    isDark ? "text-slate-400" : "text-gray-600"
+                  }`}
+                >
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+};
+
 // ==================== EXPERIENCE SECTION ====================
 const ExperienceSection = ({ isDark }: SectionProps) => {
   return (
@@ -577,6 +677,10 @@ const ProjectCard = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleLearnMore = (targetUrl: string) => {
+    window.open(targetUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <motion.div
       className={`group rounded-xl overflow-hidden border ${
@@ -650,6 +754,7 @@ const ProjectCard = ({
 
         {/* CTA */}
         <motion.button
+          onClick={() => handleLearnMore(project.liveUrl)}
           className={`flex items-center gap-2 text-sm font-semibold transition-colors ${
             isDark
               ? "text-cyan-400 hover:text-cyan-300"
@@ -1061,6 +1166,7 @@ export default function PortfolioApp() {
         <CursorFollower isDark={isDark} />
         <Navigation isDark={isDark} setIsDark={setIsDark} />
         <HeroSection isDark={isDark} />
+        <AboutSection isDark={isDark} />
         <ExperienceSection isDark={isDark} />
         <ProjectsSection isDark={isDark} />
         <SkillsSection isDark={isDark} />

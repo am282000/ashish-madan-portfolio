@@ -27,6 +27,38 @@
       "icon": "mail"
     }
   ],
+  "about": {
+    "intro": "Get to know me",
+    "description": "I'm a Senior Frontend Engineer who loves building things that work beautifully and perform well. Passionate about clean code, mentoring teams, and creating products users genuinely enjoy.",
+    "highlights": [
+      {
+        "icon": "💻",
+        "title": "I Build",
+        "description": "Fast, scalable frontend systems that users love."
+      },
+      {
+        "icon": "📚",
+        "title": "I Learn",
+        "description": "New technologies, frameworks, and best practices constantly."
+      },
+      {
+        "icon": "🤝",
+        "title": "I Mentor",
+        "description": "Help teammates grow and ship great products together."
+      },
+      {
+        "icon": "🎯",
+        "title": "I Care",
+        "description": "About clean code, performance, and user experience."
+      }
+    ],
+    "stats": [
+      { "value": "4+", "label": "Years Building" },
+      { "value": "20+", "label": "Products Shipped" },
+      { "value": "50+", "label": "GitHub Projects" },
+      { "value": "∞", "label": "Always Learning" }
+    ]
+  },
   "experience": [
     {
       "id": 1,
@@ -35,10 +67,10 @@
       "duration": "Apr 2025 - Present",
       "description": "Leading architecture of multi-tenant SaaS platforms with RBAC and real-time systems",
       "highlights": [
-        "Led architecture of a multi-tenant SaaS platform with RBAC, supporting multiple enterprise clients",
-        "Designed a dynamic onboarding system improving completion rates and reducing drop-offs",
-        "Built a headless component library reducing duplicate UI effort",
-        "Collaborated cross-functionally with backend and product teams"
+        "Led architecture of a multi-tenant SaaS platform with RBAC, supporting multiple enterprise clients with isolated data layers",
+        "Designed a dynamic onboarding system (4-step workflow, autofill, validation), improving completion rates and reducing drop-offs",
+        "Built a headless component library using reusable patterns, reducing duplicate UI effort and improving team velocity",
+        "Collaborated cross-functionally with backend and product teams to define scalable frontend architecture"
       ]
     },
     {
@@ -48,10 +80,10 @@
       "duration": "Aug 2022 - Mar 2025",
       "description": "Architected large-scale migrations and performance optimizations",
       "highlights": [
-        "Migrated large-scale Vue 2 application to React, improving performance by 30%",
-        "Developed a Progressive Web App (PWA) with offline support and push notifications",
-        "Designed a timezone-aware scheduling system for distributed users",
-        "Improved performance using code splitting and lazy loading"
+        "Migrated large-scale Vue 2 application to React using Web Components, improving performance by 30% and enabling gradual migration",
+        "Developed a Progressive Web App (PWA) with offline support and push notifications, improving accessibility in low-network conditions",
+        "Designed a timezone-aware scheduling system, solving global time inconsistencies for distributed users",
+        "Improved performance using code splitting, lazy loading, and Lighthouse optimization techniques"
       ]
     },
     {
@@ -92,7 +124,8 @@
         "deploymentReduction": "35%",
         "documentProcessing": "40%",
         "performanceGain": "30%"
-      }
+      },
+      "liveUrl": "https://example.com/service-request-platform"
     },
     {
       "id": 2,
@@ -110,7 +143,8 @@
       "metrics": {
         "latencyReduction": "40%",
         "errorReduction": "25%"
-      }
+      },
+      "liveUrl": "https://example.com/kipu-healthcare"
     }
   ],
   "skills": [
